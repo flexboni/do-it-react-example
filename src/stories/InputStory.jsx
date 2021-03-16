@@ -5,6 +5,8 @@ import { action } from '@storybook/addon-actions';
 import Input from '../03/Input';
 
 storiesOf('Input', module)
-  .add('basic setting', () => <Input name="name" />)
-  .add('lable example', () => <Input name="name" lable="name" />)
-  .add('onChange example', () => <Input name="name" onChange={action('onChange 이벤트 발생')} />);
+  .addWithJSX('basic setting', () => <Input name="name" />)
+  .addWithJSX('lable example', () => <Input name="name" lable="name" />)
+  .addWithJSX('onChange example', () => (
+    <Input name="name" onChange={action('onChange 이벤트 발생')} />
+  ));
