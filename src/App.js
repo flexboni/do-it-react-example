@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
-import TodaysPlan from './03/TodaysPlan';
+import VariablePropsComponent from './03/VariablePropsComponent';
 
 class App extends Component {
   render() {
+    const array = [1, 2, 3];
+    const obj = { name: '제목', age: 30 };
+    const node = <h1>node</h1>;
+    const func = () => {
+      console.log('message');
+    };
+
     return (
       <div className="body">
-        <TodaysPlan />
+        <VariablePropsComponent
+          boolValue={true}
+          numValue={1}
+          arrayValue={array}
+          objValue={obj}
+          nodeValue={node}
+          funcValue={func}
+        />
       </div>
     );
   }
