@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import configureStore from './configureStore';
 import { Provider } from 'react-redux';
 
-import { setCollection } from './actions/collectionActions';
+import { setCollection, setAge } from './actions/collectionActions';
 
 class AdvReduxApp extends PureComponent {
   store = configureStore({ loading: false });
@@ -14,6 +14,7 @@ class AdvReduxApp extends PureComponent {
         { id: 2, name: 'Park', age: 27 },
       ]),
     );
+    this.store.dispatch(setAge(2, 55));
 
     const { collection } = this.store.getState(); // getState() 함수 이용하면 스토어 전체 객체에 접근 가능
     const { ids, entities } = collection;
