@@ -14,6 +14,11 @@ class AdvReduxApp extends PureComponent {
         { id: 2, name: 'Park', age: 27 },
       ]),
     );
+
+    const { collection } = this.store.getState(); // getState() 함수 이용하면 스토어 전체 객체에 접근 가능
+    const { ids, entities } = collection;
+    const originalPayload = ids.map(id => entities[id]);
+    console.log(originalPayload);
   }
 
   render() {
