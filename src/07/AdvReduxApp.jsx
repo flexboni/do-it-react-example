@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 
 import { setCollection, setAge } from './actions/collectionActions';
 
+import PresentationComponent from './PresentationComponent';
+import ContainerComponent from './containers/ContainerComponent';
+
 class AdvReduxApp extends PureComponent {
   store = configureStore({ loading: false });
 
@@ -23,7 +26,13 @@ class AdvReduxApp extends PureComponent {
   }
 
   render() {
-    return <Provider store={this.store}>Advanced Redux Example</Provider>;
+    return (
+      <Provider store={this.store}>
+        화면 컴포넌트 : <PresentationComponent userName="화면 컴포넌트" />
+        <br />
+        데이터 컴포넌트 : <ContainerComponent id={2} />
+      </Provider>
+    );
   }
 }
 
