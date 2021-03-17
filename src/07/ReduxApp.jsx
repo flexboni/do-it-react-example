@@ -9,6 +9,13 @@ class ReduxApp extends PureComponent {
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   );
 
+  componentDidMount() {
+    this.store.dispatch({
+      type: 'SET_LOADING',
+      payload: true,
+    });
+  }
+
   render() {
     return <Provider store={this.store}>Redux Example</Provider>;
   }
