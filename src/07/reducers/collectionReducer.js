@@ -21,7 +21,7 @@ export default (state = initState, action) => {
       return { ...state, ids, entities };
     }
     case SET_AGE: {
-      const { id, age } = action;
+      const { id, age } = payload;
       return {
         ...state,
         entities: {
