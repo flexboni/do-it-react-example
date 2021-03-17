@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import VariablePropsComponent from './03/VariablePropsComponent';
+// 아래 머터리얼 스타일 설정을 삭제합니다.
+// import './materialize.scss';
+import './App.css';
+
+import InputWithStyle from './04/InputWithStyle';
 
 class App extends Component {
   render() {
-    const array = [1, 2, 3];
-    const obj = { name: '제목', age: 30 };
-    const node = <h1>node</h1>;
-    const func = () => {
-      console.log('message');
-    };
-
     return (
-      <div className="body">
-        <VariablePropsComponent
-          boolValue={true}
-          numValue={1}
-          arrayValue={array}
-          objValue={obj}
-          nodeValue={node}
-          funcValue={func}
-        />
+      <div>
+        <nav>
+          <div className="nav-wrapper">
+            <div>두잇! 리액트 시작하기</div>
+          </div>
+        </nav>
+        <h1>머터리얼 CSS</h1>
+        <InputWithStyle name="name" label="이름" />
       </div>
     );
   }
