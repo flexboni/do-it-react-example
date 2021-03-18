@@ -18,9 +18,9 @@ class SearchFilterReduxApp extends PureComponent {
       <Provider store={this.store}>
         리덕스 예제
         <fieldset>
-          <SearchFilterInputContainer type="number" name="id" label="아이디 검색" />
-          <SearchFilterInputContainer type="text" name="name" label="이름 검색" />
-          <SearchFilterInputContainer type="number" name="age" label="나이 검색" />
+          <SearchFilterInputContainer type="number" name="id" placeholder="아이디 검색" />
+          <SearchFilterInputContainer type="text" name="name" placeholder="이름 검색" />
+          <SearchFilterInputContainer type="number" name="age" placeholder="나이 검색" />
           <SearchResetButtonContainer>리셋</SearchResetButtonContainer>
         </fieldset>
         <br />

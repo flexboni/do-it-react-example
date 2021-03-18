@@ -27,10 +27,9 @@ class Input extends PureComponent {
     this.ref = ref;
   }
   render() {
-    const { errorMessage, label, name, value, type, onFocus } = this.props;
+    const { errorMessage, placeholder, name, value, type, onFocus } = this.props;
     return (
       <label>
-        {label}
         <input
           id={`input_${name}`}
           ref={this.setRef}
@@ -38,6 +37,7 @@ class Input extends PureComponent {
           onFocus={onFocus}
           value={value}
           type={type}
+          placeholder={placeholder}
         />
         {errorMessage && <span className="error">{errorMessage}</span>}
       </label>
@@ -50,7 +50,7 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   errorMessage: PropTypes.string,
-  label: PropTypes.string,
+  placeholder: PropTypes.string,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   autoFocus: PropTypes.bool,

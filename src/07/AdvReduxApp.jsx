@@ -2,11 +2,7 @@ import React, { PureComponent } from 'react';
 import configureStore from './configureStore';
 import { Provider } from 'react-redux';
 
-// import { setCollection } from './actions/collectionActions';
-
-import PresentationComponent from './PresentationComponent';
-import ContainerComponent from './containers/ContainerComponent';
-import DispatchContainer from './containers/DispatchContainer';
+// import { setCollection, setAge } from './actions/collectionActions';
 
 class AdvReduxApp extends PureComponent {
   store = configureStore({ loading: false });
