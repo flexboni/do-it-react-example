@@ -7,6 +7,7 @@ const initState = {
 
 export default (state = initState, action) => {
   const { type, payload } = action;
+
   switch (type) {
     case SET_COLLECTION: {
       // payload의 하위에 ids와 entities를 저장
