@@ -21,6 +21,7 @@ export function createTransaction(data, onComplete) {
     promise: Api.post('/transactions', { data }),
     meta: {
       onSuccess: onComplete,
+      notification: { success: '거래가 성공적으로 완료됐습니다.' },
     },
   };
 }

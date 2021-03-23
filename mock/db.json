@@ -69,6 +69,22 @@
         "name": "비트코인"
       },
       "id": "7RaNrSZ"
+    },
+    {
+      "data": {
+        "currentPrice": "132323",
+        "amount": "1",
+        "name": "비트코인"
+      },
+      "id": "Bu9JP9W"
+    },
+    {
+      "data": {
+        "currentPrice": "123",
+        "amount": "1",
+        "name": "비트코인"
+      },
+      "id": "qBPZH5H"
     }
   ]
 }

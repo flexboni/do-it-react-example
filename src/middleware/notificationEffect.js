@@ -1,6 +1,10 @@
 import { KEY, LIFECYCLE } from 'redux-pack';
 
-import { showMessage } from '../actions/notificationActions';
+import { SHOW_NOTIFICATION, showMessage, hideMessage } from '../actions/notificationActions';
+
+import { debounce } from '../debounce';
+
+const debounceRunner = debounce(action => action(), 4000);
 
 export default store => nextRunner => action => {
   const { type, meta } = action;
@@ -11,6 +15,9 @@ export default store => nextRunner => action => {
     } else if (error && meta[KEY.LIFECYCLE] === LIFECYCLE.FAILURE) {
       store.dispatch(showMessage(error, true));
     }
+  } else if (type === SHOW_NOTIFICATION) {
+    const hide = () => store.dispatch(hideMessage());
+    debounceRunner(hide);
   }
   return nextRunner(action);
 };
